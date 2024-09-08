@@ -1,0 +1,17 @@
+{
+  "name": "fastify-timezone-plugin",
+  "version": "1.0.0",
+  "main": "index.mjs",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "fastify": "^4.0.0",
+    "moment-timezone": "^0.5.45"
+  }
+}
