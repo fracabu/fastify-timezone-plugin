@@ -1,4 +1,5 @@
 
+---
 
 ## fastify-timezone-plugin
 
@@ -7,7 +8,9 @@ A **Fastify** plugin that provides routes to list supported timezones and get th
 ### Available Routes
 
 - **GET /timezones**: Returns a list of all supported timezones.
-- **GET /current-time/:timezone**: Returns the current time in the specified timezone.
+- **GET /current-time/:timezone**: Returns the current time in the specified timezone.  
+  **Note:** When specifying a timezone in the URL, replace the `/` with `%2F` (URL encoding for `/`). For example, to get the current time in "Europe/Rome", use:  
+  `/current-time/Europe%2FRome`.
 
 ## Installation
 
@@ -46,7 +49,7 @@ fastify.listen({ port: 3000 }, (err, address) => {
 
 - **GET /timezones**  
   This route responds with a JSON array of timezones:
-  
+
   ```json
   {
     "timezones": [
@@ -59,7 +62,8 @@ fastify.listen({ port: 3000 }, (err, address) => {
   ```
 
 - **GET /current-time/:timezone**  
-  Returns the current time for the specified timezone:
+  Returns the current time for the specified timezone.  
+  **Important**: Use `%2F` in place of `/` in the timezone name (e.g., `Europe%2FRome`):
 
   ```json
   {
@@ -77,4 +81,3 @@ If you want to contribute or suggest new features, feel free to open a **pull re
 This project is licensed under the **ISC License**.
 
 ---
-
