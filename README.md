@@ -1,4 +1,4 @@
-Ecco come apparirebbe l'intero contenuto nel file `README.md`:
+
 
 ```markdown
 # fastify-my-plugin
@@ -61,4 +61,3 @@ If you would like to contribute or suggest new features, feel free to open a **p
 This project is licensed under the **ISC License**.
 ```
 
-Questo è un tipico file `README.md` che spiega come installare, utilizzare e contribuire al plugin Fastify. Basta salvarlo come `README.md` nella root del tuo progetto per far sì che sia pronto per la pubblicazione su npm o GitHub.
