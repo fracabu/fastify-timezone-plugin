@@ -1,30 +1,28 @@
 
----
+# 🌐 fastify-timezone-plugin
 
-## fastify-timezone-plugin
+**fastify-timezone-plugin** è un plugin per [Fastify](https://www.fastify.io/) che fornisce delle rotte per elencare i fusi orari supportati e ottenere l'ora corrente in uno specifico fuso orario.
 
-A **Fastify** plugin that provides routes to list supported timezones and get the current time in a specific timezone.
+## 📋 Rotte Disponibili
 
-### Available Routes
-
-- **GET /timezones**: Returns a list of all supported timezones.
-- **GET /current-time/:timezone**: Returns the current time in the specified timezone.  
-  **Note:** When specifying a timezone in the URL, replace the `/` with `%2F` (URL encoding for `/`). For example, to get the current time in "Europe/Rome", use:  
+- **GET /timezones**: Restituisce una lista di tutti i fusi orari supportati.
+- **GET /current-time/:timezone**: Restituisce l'ora corrente nel fuso orario specificato.  
+  **Nota**: Quando specifichi un fuso orario nell'URL, sostituisci il carattere `/` con `%2F` (codifica URL per `/`). Ad esempio, per ottenere l'ora corrente in "Europe/Rome", usa:  
   `/current-time/Europe%2FRome`.
 
-## Installation
+## 🚀 Installazione
 
-You can install the plugin via npm:
+Per installare il plugin, utilizza npm:
 
 ```bash
 npm install fastify-timezone-plugin
 ```
 
-## Usage
+## 🛠️ Utilizzo
 
-Here’s an example of how to register the plugin in your Fastify project:
+Ecco un esempio di come registrare il plugin nel tuo progetto Fastify:
 
-```js
+```javascript
 import Fastify from 'fastify';
 import timezonePlugin from 'fastify-timezone-plugin';
 
@@ -32,23 +30,23 @@ const fastify = Fastify({
   logger: true,
 });
 
-// Register the plugin
+// Registra il plugin
 fastify.register(timezonePlugin);
 
-// Start the server
+// Avvia il server
 fastify.listen({ port: 3000 }, (err, address) => {
   if (err) {
     fastify.log.error(err);
     process.exit(1);
   }
-  fastify.log.info(`Server listening at ${address}`);
+  fastify.log.info(`Server in ascolto su ${address}`);
 });
 ```
 
-### Example Routes
+### 🌐 Esempi di Rotte
 
 - **GET /timezones**  
-  This route responds with a JSON array of timezones:
+  Questa rotta risponde con un array JSON di fusi orari supportati:
 
   ```json
   {
@@ -62,8 +60,8 @@ fastify.listen({ port: 3000 }, (err, address) => {
   ```
 
 - **GET /current-time/:timezone**  
-  Returns the current time for the specified timezone.  
-  **Important**: Use `%2F` in place of `/` in the timezone name (e.g., `Europe%2FRome`):
+  Restituisce l'ora corrente per il fuso orario specificato.  
+  **Importante**: Usa `%2F` al posto di `/` nel nome del fuso orario (ad es., `Europe%2FRome`):
 
   ```json
   {
@@ -72,13 +70,12 @@ fastify.listen({ port: 3000 }, (err, address) => {
   }
   ```
 
-## Contributing
+## 🤝 Contributi
 
-If you want to contribute or suggest new features, feel free to open a **pull request** or create an **issue** on the project’s GitHub repository.
+Se desideri contribuire o suggerire nuove funzionalità, sentiti libero di aprire una **pull request** o creare una **issue** sul repository GitHub del progetto.
 
-## License
+## 📄 Licenza
 
-This project is licensed under the **ISC License**.
-
----
+Questo progetto è distribuito sotto la licenza **ISC**.
+```
 
